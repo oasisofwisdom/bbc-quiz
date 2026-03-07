@@ -1,1 +1,42 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+<title>BBC Admin Login</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>BBC Admin Panel</h2>
+
+<input type="password" id="password" placeholder="Admin Password">
+
+<button onclick="login()">Login</button>
+
+</div>
+
+<script>
+
+function login(){
+
+let pass = document.getElementById("password").value
+
+if(pass === "bbc2026"){
+
+window.location.href="dashboard.html"
+
+}else{
+
+alert("Wrong Password")
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
