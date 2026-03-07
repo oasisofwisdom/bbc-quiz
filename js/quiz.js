@@ -1,7 +1,25 @@
-let name = localStorage.getItem("bbc_name")
+import { db } from "./firebase.js"
 
-document
-.getElementById("welcome")
-.innerText = "Welcome " + name
+import {
 
-// later this will connect to Firebase
+doc,
+onSnapshot
+
+}
+
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"
+
+const stateRef = doc(db,"quiz","state")
+
+onSnapshot(stateRef,(doc)=>{
+
+let data = doc.data()
+
+if(data.quizStarted){
+
+document.getElementById("waiting").style.display="none"
+document.getElementById("questionArea").style.display="block"
+
+}
+
+})
